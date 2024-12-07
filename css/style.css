@@ -99,7 +99,7 @@
 	position: absolute;
 	width: 2px;
 	height: 100%;
-	background-color: rgb(9, 16, 44);
+	background-color: rgb(3, 0, 177);
 	left: calc(50% - 1px);
 }
 .timeline-item{
