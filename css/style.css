@@ -23,6 +23,7 @@
 }
 
 
+
 .banner-image::before {
     content: '';
     position: absolute;
@@ -83,7 +84,7 @@
     background-color: black;
 }
 .timeline-section{
-	background-color: rgb(12, 16, 30);
+	background-color: rgb(255, 255, 255);
 	min-height: 100vh;
 	padding: 100px 15px;
 }
@@ -120,7 +121,7 @@
 .timeline-dot{
 	height: 16px;
 	width: 16px;
-	background-color: #ffffff;
+	background-color: rgb(9, 16, 44);
 	position: absolute;
 	left: calc(50% - 8px);
 	border-radius: 50%;
@@ -181,5 +182,69 @@
 }
 
 .card {
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5); /* Bayangan putih dengan transparansi */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Bayangan putih dengan transparansi */
 }
+
+.tekan {
+    margin: 100px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+  }
+  .tekan::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(2, 0, 33);
+    box-shadow: 8px 4px 8px 4px rgba(255, 255, 255, 0.2);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  .tekan::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #FF0000, #FF7300, #FFFB00, #48FF00,
+      #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+  }
+  
+  @keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+  }
+  
+  .tekan:hover::before {
+    opacity: 1;
+  }
+  
+  .tekan:active:after {
+    background: transparent;
+  }
+  
+  .tekan:active {
+    color: #000;
+    font-weight: bold;
+  }
+  
